@@ -23,7 +23,7 @@ const App = () => {
       const user = await loginService.login({
         username, password,
       })
-      console.log(user)
+
 
       window.localStorage.setItem('loggedBlogUser', JSON.stringify(user))
       blogService.setToken(user.token)
@@ -101,7 +101,7 @@ const App = () => {
 
     const id=blog.id
     const response =await blogService.update(id,ublog)
-    console.log(response)
+
 
     blogService.getAll().then(blogs =>
       setBlogs( blogs ))
